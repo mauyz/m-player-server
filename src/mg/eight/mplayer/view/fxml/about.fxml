@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.canvas.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<VBox id="aboutPane" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="227.0" prefWidth="417.0" stylesheets="@../css/about.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mg.eight.mplayer.controller.AboutController">
+   <children>
+      <Label alignment="TOP_LEFT" prefHeight="32.0" prefWidth="359.0" text="M-Player Server v2.0">
+         <font>
+            <Font name="Arial" size="27.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </Label>
+      <GridPane id="gridpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="152.0" prefWidth="400.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Copyright © 2018 Eight Group, Inc." GridPane.columnSpan="2147483647" GridPane.hgrow="ALWAYS">
+               <font>
+                  <Font name="Monospaced Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label text="Author : Mauyz" GridPane.columnSpan="2147483647" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Monospaced Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label minWidth="-Infinity" text="Bug report :" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Monospaced Bold" size="14.0" />
+               </font>
+            </Label>
+            <Hyperlink focusTraversable="false" onAction="#googleLinkAction" text="tsiorymauyz@gmail.com" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Monospaced Bold" size="14.0" />
+               </font>
+            </Hyperlink>
+            <Label maxWidth="-Infinity" text="Facebook :" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Monospaced Bold" size="14.0" />
+               </font>
+            </Label>
+            <Hyperlink focusTraversable="false" onAction="#fbLinkAction" text="Moïse Tsiorinambinina" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Monospaced Bold" size="14.0" />
+               </font>
+            </Hyperlink>
+            <Label text="Donate: +261349063788" GridPane.columnSpan="2147483647" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Monospaced Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+         <VBox.margin>
+            <Insets top="15.0" />
+         </VBox.margin>
+      </GridPane>
+      <Button layoutX="178.0" layoutY="258.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#closeBtnAction" prefHeight="31.0" prefWidth="66.0" text="Close" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="178.0" AnchorPane.rightAnchor="177.0">
+         <VBox.margin>
+            <Insets bottom="10.0" top="20.0" />
+         </VBox.margin></Button>
+   </children>
+</VBox>

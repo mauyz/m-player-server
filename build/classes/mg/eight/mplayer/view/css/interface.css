@@ -1,0 +1,199 @@
+
+#mainToolbar {
+    -fx-background-image: url("../images/mid-bar-left.png");
+    -fx-background-size: cover;
+    -fx-background-position: left top;
+    -fx-background-repeat: no-repeat;  
+}
+
+#windowClose {
+    -fx-font-size: 1px;
+    -fx-background-color: null;
+    -fx-background-image: url("../images/window-close.png");
+    -fx-padding: 6 6 4 6;
+}
+#windowMin {
+    -fx-font-size: 1px;
+    -fx-background-color: null;
+    -fx-background-image: url("../images/window-min.png");
+    -fx-padding: 6 6 4 6;
+}
+#windowMax {
+    -fx-font-size: 1px;
+    -fx-background-color: null;
+    -fx-background-image: url("../images/window-expand.png");
+    -fx-padding: 6 6 4 6;
+}
+#windowClose:hover {
+    -fx-background-image: url("../images/window-close-over.png");
+}
+#windowMin:hover {
+    -fx-background-image: url("../images/window-min-over.png");
+}
+#windowMax:hover {
+    -fx-background-image: url("../images/window-expand-over.png");
+}
+#windowClose:focused, #windowMin:focused , #windowMax:focused {
+    -fx-effect: dropshadow( three-pass-box , -fx-focus-color , 5, 0.7 , 0 , 0 );
+}
+
+#windowResizeBtn {
+    -fx-background-image: url("../images/window-corner.png");
+    -fx-background-position:  1px 1px;
+    -fx-background-repeat: no-repeat;
+}
+
+#videoPane{
+    -fx-border-width: 0.1px;
+    -fx-border-style: solid;
+    -fx-border-color: #6e737d;
+}
+
+#mediaPane{
+    -fx-background-color: #000000;
+    -fx-border-width: 0.1px;
+    -fx-border-style: solid;
+    -fx-border-color: #000000;
+}
+
+#buttonPane{
+    -fx-background-color:#6e737d;
+    -fx-background-radius: 0 0 0 10;
+}
+
+#playListPane{
+    -fx-background-color:#ffffff;
+}
+
+#searchTxt{
+    -fx-background-radius: 10px;
+}
+
+#clearBtn {
+    -fx-background-color: null;
+    -fx-background-image: url("../images/search-clear.png");
+}
+
+#clearBtn:hover {
+    -fx-background-image: url("../images/search-clear-over.png");
+}
+
+#playListChoice{
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+}
+
+#controlPane {
+    -fx-background-image: url("../images/mid-bar-left.png");
+    -fx-background-size: cover;
+    -fx-background-position: left top;
+    -fx-background-repeat: no-repeat;
+}
+
+#previousBtn {
+    -fx-background-color: #cccccc;
+    -fx-background-radius: 15 0 0 15;
+    -fx-background-position:center; 
+    -fx-background-image: url("../images/ic_skip_previous_white_36dp.png");
+    -fx-background-size: contain;
+    -fx-background-repeat: space;
+}
+#stopBtn {
+    -fx-background-color: #cccccc;
+    -fx-background-radius: 0;
+    -fx-background-position:center; 
+    -fx-background-image: url("../images/ic_stop_white_36dp.png");
+    -fx-background-size: contain;
+}
+#playBtn {
+    -fx-background-color: #cccccc;
+    -fx-background-radius: 0;
+    -fx-background-position:center; 
+    -fx-background-image: url("../images/ic_play_arrow_white_36dp.png");
+    -fx-background-size: contain;
+    -fx-background-repeat: space;
+}
+
+#nextBtn {
+    -fx-background-color: #cccccc;
+    -fx-background-radius: 0 15 15 0;
+    -fx-background-position:center; 
+    -fx-background-image: url("../images/ic_skip_next_white_36dp.png");
+    -fx-background-size: contain;
+    -fx-background-repeat: space;
+}
+
+#playlistToggle {
+    -fx-background-color: #cccccc;
+    -fx-background-radius: 0;
+    -fx-background-position:center; 
+    -fx-background-image: url("../images/ic_format_list_bulleted_white_36dp.png");
+    -fx-background-size: contain;
+    -fx-background-repeat: space;
+}
+#repeatToggle {
+    -fx-background-color: #cccccc;
+    -fx-background-radius: 0;
+    -fx-background-position:center; 
+    -fx-background-image: url("../images/ic_repeat_white_36dp.png");
+    -fx-background-size: contain;
+}
+#shuffleToggle {
+    -fx-background-color: #cccccc;
+    -fx-background-radius: 0;
+    -fx-background-position:center; 
+    -fx-background-image: url("../images/ic_shuffle_white_36dp.png");
+    -fx-background-size: contain;
+    -fx-background-repeat: space;
+}
+
+#playlistToggle:selected, #repeatToggle:selected,#shuffleToggle:selected{
+    -fx-border-color: #90CAF9;
+    -fx-border-width: 1.5px;
+}
+
+#remoteToggle {
+    -fx-background-color: #cccccc;
+    -fx-background-radius: 0;
+    -fx-background-position:center; 
+    -fx-background-image: url("../images/ic_signal_wifi_off_white_24dp.png");
+    -fx-background-size: 24px;
+    -fx-background-repeat: space;
+}
+
+#remoteToggle:selected{
+    -fx-background-image: url("../images/ic_signal_wifi_4_bar_white_24dp.png");
+}
+
+.button:hover,.toggle-button:hover, .imageView:hover {
+    -fx-effect: dropshadow( three-pass-box , white , 8 , 0.4 , 0 , 0 );
+}
+
+#volumeBtn{
+    -fx-background-color: #cccccc;
+    -fx-background-radius: 0;
+    -fx-background-position:center;
+    -fx-background-image: url("../images/ic_volume_up_white_24dp.png");
+    -fx-background-size: contain;
+    -fx-background-repeat: space;
+}
+
+#volumeBtn:selected{
+    -fx-background-image: url("../images/ic_volume_off_black_24dp.png");
+}
+
+#downBtn:hover,#upBtn:hover {
+    -fx-effect: dropshadow( three-pass-box , white , 5 , 0.4 , 0 , 0 );
+    -fx-background-radius:0;
+}
+
+.tooltip{
+    -fx-background-color:#cccccc;
+    -fx-background-radius:0;
+    -fx-effect: dropshadow( three-pass-box , black ,4 , 0.4 , 0 , 0 );
+    -fx-text-fill: -fx-text-base-color;
+    -fx-font-size: 1.0em;
+}
+#stackPane{
+    -fx-background-color: rgba(0, 0, 0, 0.4);
+}

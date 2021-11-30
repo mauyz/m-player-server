@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.canvas.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<VBox id="aboutPane" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="455.0" prefWidth="519.0" stylesheets="@../css/about.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mg.eight.mplayer.controller.ManualController">
+   <children>
+      <TextArea fx:id="manualTxt" editable="false" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="507.0">
+         <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </VBox.margin>
+      </TextArea>
+    <TitledPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="182.0" prefWidth="507.0" text="Shortcuts">
+         <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </VBox.margin>
+         <content>
+            <TableView fx:id="shortcutTable" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="156.0" prefWidth="505.0">
+              <columns>
+                <TableColumn fx:id="action" editable="false" minWidth="-1.0" prefWidth="-1.0" text="Action" />
+                <TableColumn fx:id="value" editable="false" minWidth="-1.0" prefWidth="-1.0" text="Shortcut" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </content>
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </TitledPane>
+      <Button layoutX="178.0" layoutY="258.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#closeBtnAction" prefHeight="31.0" prefWidth="66.0" text="Close" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="178.0" AnchorPane.rightAnchor="177.0">
+         <VBox.margin>
+            <Insets bottom="10.0" top="5.0" />
+         </VBox.margin></Button>
+   </children>
+</VBox>

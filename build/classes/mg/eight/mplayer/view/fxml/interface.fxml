@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="572.0" prefWidth="1015.0" stylesheets="@../css/interface.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mg.eight.mplayer.controller.InterfaceController">
+   <children>
+      <HBox id="mainToolbar" alignment="TOP_RIGHT" nodeOrientation="LEFT_TO_RIGHT" onMouseClicked="#mainToolbarClickedAction" onMouseDragged="#mainToolbarDraggedAction" onMousePressed="#mainToolbarPressedAction" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <MenuBar id="menubar" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#mainToolbarClickedAction" onMouseDragged="#mainToolbarDraggedAction" onMousePressed="#mainToolbarPressedAction" prefHeight="30.0" HBox.hgrow="ALWAYS">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                        <MenuItem fx:id="openFileItem" mnemonicParsing="false" onAction="#addFiles" text="Open file...">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                        <MenuItem fx:id="openFolderItem" mnemonicParsing="false" onAction="#addDir" text="Open folder...">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="F" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                    <MenuItem mnemonicParsing="false" onAction="#windowCloseAction" text="Quit">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="Q" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator></MenuItem>
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                        <MenuItem mnemonicParsing="false" onAction="#showManual" text="Manual">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="F1" control="UP" meta="UP" shift="UP" shortcut="ANY" />
+                           </accelerator>
+                        </MenuItem>
+                    <MenuItem mnemonicParsing="false" onAction="#showAbout" text="About">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="I" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator></MenuItem>
+                  </items>
+                </Menu>
+              </menus>
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </MenuBar>
+            <AnchorPane HBox.hgrow="ALWAYS">
+               <children>
+                  <Label fx:id="songLbl" alignment="CENTER" prefHeight="30.0" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </AnchorPane>
+            <HBox id="buttonPane" fillHeight="false" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" spacing="4.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Button id="windowMin" focusTraversable="false" mnemonicParsing="false" onAction="#windowMinAction" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+                  <Button id="windowMax" focusTraversable="false" mnemonicParsing="false" onAction="#windowMaxAction">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+                  <Button id="windowClose" focusTraversable="false" mnemonicParsing="false" onAction="#windowCloseAction">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets bottom="3.0" left="5.0" right="3.0" top="3.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </HBox>
+         </children>
+      </HBox>
+      <AnchorPane fx:id="mediaPane" layoutX="14.0" layoutY="90.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+         <children>
+            <BorderPane id="videoPane" fx:id="videoPane" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <center>
+                  <ImageView fx:id="audioImageView" focusTraversable="true" onDragDropped="#onDraggedFiles" onDragOver="#onDragOverFiles" onKeyPressed="#keyPressed" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                  </ImageView>
+               </center></BorderPane>
+            <Label fx:id="songTitleLbl" alignment="CENTER" focusTraversable="false" maxHeight="-Infinity" minHeight="-Infinity" textFill="WHITE" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <VBox fx:id="playListPane" minHeight="-Infinity" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <AnchorPane>
+                     <children>
+                        <ChoiceBox fx:id="playListChoice" focusTraversable="false" minHeight="-Infinity" prefWidth="150.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="1.0">
+                           <tooltip>
+                              <Tooltip text="Playlists" />
+                           </tooltip></ChoiceBox>
+                        <TextField fx:id="searchTxt" promptText="Search" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
+                           <tooltip>
+                              <Tooltip text="Search media in the playlist" />
+                           </tooltip>
+                           <padding>
+                              <Insets left="10.0" right="12.0" />
+                           </padding>
+                        </TextField>
+                        <Button fx:id="clearBtn" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#clearAction" prefHeight="13.0" prefWidth="12.0" visible="false" AnchorPane.bottomAnchor="6.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="6.0" />
+                     </children>
+                     <padding>
+                        <Insets top="1.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets left="2.0" right="2.0" />
+                     </VBox.margin>
+                  </AnchorPane>
+                  <ListView fx:id="playList" onDragDropped="#onDraggedFiles" onDragOver="#onDragOverFiles" onKeyPressed="#keyPressed" onMouseReleased="#doubleClicked" VBox.vgrow="ALWAYS">
+                     <contextMenu>
+                        <ContextMenu fx:id="menu">
+                          <items>
+                              <MenuItem mnemonicParsing="false" onAction="#addFiles" text="Add file...">
+                                 <accelerator>
+                                    <KeyCodeCombination alt="UP" code="O" control="UP" meta="UP" shift="DOWN" shortcut="UP" />
+                                 </accelerator>
+                              </MenuItem>
+                            <MenuItem mnemonicParsing="false" onAction="#addDir" text="Add folder...">
+                                 <accelerator>
+                                    <KeyCodeCombination alt="UP" code="F" control="UP" meta="UP" shift="DOWN" shortcut="UP" />
+                                 </accelerator>
+                              </MenuItem>
+                              <MenuItem mnemonicParsing="false" onAction="#playNextAction" text="Play next">
+                                 <accelerator>
+                                    <KeyCodeCombination alt="UP" code="X" control="UP" meta="UP" shift="DOWN" shortcut="UP" />
+                                 </accelerator></MenuItem>
+                              <MenuItem mnemonicParsing="false" onAction="#removeAction" text="Remove">
+                                 <accelerator>
+                                    <KeyCodeCombination alt="ANY" code="DELETE" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                                 </accelerator>
+                              </MenuItem>
+                              <MenuItem mnemonicParsing="false" onAction="#clearPlaylist" text="Clear the playlist">
+                                 <accelerator>
+                                    <KeyCodeCombination alt="UP" code="V" control="UP" meta="UP" shift="DOWN" shortcut="UP" />
+                                 </accelerator>
+                              </MenuItem>
+                              <SeparatorMenuItem mnemonicParsing="false" />
+                            <MenuItem mnemonicParsing="false" onAction="#managePlaylist" text="Add playlist">
+                                 <accelerator>
+                                    <KeyCodeCombination alt="UP" code="A" control="UP" meta="UP" shift="DOWN" shortcut="UP" />
+                                 </accelerator>
+                              </MenuItem>
+                              <MenuItem fx:id="renamePlBtn" mnemonicParsing="false" onAction="#managePlaylist" text="Rename playlist">
+                                 <accelerator>
+                                    <KeyCodeCombination alt="UP" code="R" control="UP" meta="UP" shift="DOWN" shortcut="UP" />
+                                 </accelerator>
+                              </MenuItem>
+                              <MenuItem fx:id="deletePlBtn" mnemonicParsing="false" onAction="#deletePlaylist" text="Delete playlist">
+                                 <accelerator>
+                                    <KeyCodeCombination alt="UP" code="D" control="UP" meta="UP" shift="DOWN" shortcut="UP" />
+                                 </accelerator>
+                              </MenuItem>
+                          </items>
+                        </ContextMenu>
+                     </contextMenu>
+                     <VBox.margin>
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                     </VBox.margin>
+                  </ListView>
+               </children>
+            </VBox>
+            <VBox fx:id="controlPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <HBox alignment="BOTTOM_LEFT" fillHeight="false" spacing="10.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <ToggleButton fx:id="remoteToggle" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="28.0" prefWidth="34.0" selected="true" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </ToggleButton>
+                        <Label fx:id="statusLbl" focusTraversable="false" prefHeight="25.0" text="Device connected : ">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="deviceLbl" focusTraversable="false" text="no device">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="7.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" fillHeight="false" prefHeight="50.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <children>
+                        <HBox fx:id="mediaBtnPane" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="2.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Button fx:id="previousBtn" alignment="CENTER" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="32.0" prefWidth="36.0">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                                 <tooltip>
+                                    <Tooltip text="Previous media" />
+                                 </tooltip>
+                              </Button>
+                              <Button id="stopBtn" alignment="CENTER" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#stopAction" prefHeight="32.0" prefWidth="36.0">
+                                 <tooltip>
+                                    <Tooltip text="Stop playing" />
+                                 </tooltip>
+                              </Button>
+                              <Button fx:id="playBtn" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#playAction" prefHeight="32.0" prefWidth="36.0">
+                                 <tooltip>
+                                    <Tooltip text="Play/pause" />
+                                 </tooltip>
+                              </Button>
+                              <Button fx:id="nextBtn" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="32.0" prefWidth="36.0">
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                                 <tooltip>
+                                    <Tooltip text="Next media" />
+                                 </tooltip>
+                              </Button>
+                              <ToggleButton fx:id="shuffleToggle" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="32.0" prefWidth="36.0">
+                                 <tooltip>
+                                    <Tooltip text="Enable/disable random" />
+                                 </tooltip>
+                              </ToggleButton>
+                              <ToggleButton fx:id="repeatToggle" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="32.0" prefWidth="36.0">
+                        </ToggleButton>
+                              <ToggleButton fx:id="playlistToggle" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="32.0" prefWidth="36.0" selected="true">
+                                 <tooltip>
+                                    <Tooltip text="Show/hide the playlist" />
+                                 </tooltip>
+                              </ToggleButton>
+                           </children>
+                        </HBox>
+                        <Label fx:id="currentTimeLbl" focusTraversable="false" text="--:--">
+                           <HBox.margin>
+                              <Insets top="8.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Slider fx:id="timeSlider" focusTraversable="false" onMousePressed="#changeSeek" prefHeight="14.0" prefWidth="271.0" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets top="10.0" />
+                           </HBox.margin>
+                        </Slider>
+                        <Label fx:id="mediaTimeLbl" focusTraversable="false" text="--:--">
+                           <HBox.margin>
+                              <Insets top="8.0" />
+                           </HBox.margin>
+                        </Label>
+                        <ToggleButton fx:id="volumeBtn" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" HBox.hgrow="ALWAYS">
+                           <tooltip>
+                              <Tooltip text="Enable/disable mute" />
+                           </tooltip>
+                        </ToggleButton>
+                        <Slider fx:id="volumeSlider" blockIncrement="5.0" focusTraversable="false" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="14.0" prefWidth="120.0" value="50.0" HBox.hgrow="ALWAYS">
+                           <tooltip>
+                              <Tooltip />
+                           </tooltip>
+                           <HBox.margin>
+                              <Insets top="10.0" />
+                           </HBox.margin>
+                        </Slider>
+                     </children>
+                     <VBox.margin>
+                        <Insets right="5.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <StackPane fx:id="stackPane" prefHeight="150.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ProgressIndicator fx:id="progress" maxHeight="150.0" maxWidth="150.0" minHeight="150.0" minWidth="150.0" prefHeight="150.0" prefWidth="150.0" StackPane.alignment="CENTER" />
+         </children>
+      </StackPane>
+      <Region fx:id="windowResizeBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="11.0" prefWidth="11.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+   </children>
+</AnchorPane>

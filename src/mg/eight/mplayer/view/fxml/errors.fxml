@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.canvas.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<VBox id="aboutPane" alignment="TOP_CENTER" stylesheets="@../css/about.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mg.eight.mplayer.controller.ErrorsController">
+   <children>
+      <TextArea fx:id="errorsTxt" editable="false" prefHeight="321.0" prefWidth="465.0" VBox.vgrow="ALWAYS">
+         <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </VBox.margin>
+      </TextArea>
+      <HBox alignment="TOP_RIGHT" spacing="10.0">
+         <children>
+            <Button layoutX="178.0" layoutY="258.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#clearBtnAction" prefHeight="31.0" prefWidth="66.0" text="Clear" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="178.0" AnchorPane.rightAnchor="177.0">
+               <VBox.margin>
+                  <Insets bottom="10.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#closeBtnAction" prefHeight="31.0" prefWidth="66.0" text="Close" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" right="15.0" top="5.0" />
+         </padding>
+      </HBox>
+   </children>
+</VBox>
