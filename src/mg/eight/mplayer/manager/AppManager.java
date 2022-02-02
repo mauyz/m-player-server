@@ -119,7 +119,8 @@ public class AppManager {
             if (node != null && node.getLength() > 0 && node.item(0)
                     .hasChildNodes()) {
                 try {
-                    setting.setVolume(Double.parseDouble(root.getElementsByTagName("volume")
+                    setting.setVolume(Double.parseDouble(root
+                            .getElementsByTagName("volume")
                             .item(0).getFirstChild().getNodeValue()));
                 } catch (NumberFormatException e) {
                     writeLog("IllegalArgumentException +" + e.getMessage());
@@ -129,7 +130,8 @@ public class AppManager {
             if (node != null && node.getLength() > 0 && node.item(0)
                     .hasChildNodes()) {
                 try {
-                    setting.setPort(Integer.parseInt(root.getElementsByTagName("port")
+                    setting.setPort(Integer.parseInt(root
+                            .getElementsByTagName("port")
                             .item(0).getFirstChild().getNodeValue()));
                 } catch (NumberFormatException e) {
                     writeLog("IllegalArgumentException +" + e.getMessage());
@@ -139,7 +141,8 @@ public class AppManager {
             if (node != null && node.getLength() > 0 && node.item(0)
                     .hasChildNodes()) {
                 try {
-                    setting.setMute(Boolean.valueOf(root.getElementsByTagName("mute")
+                    setting.setMute(Boolean.valueOf(root
+                            .getElementsByTagName("mute")
                             .item(0).getFirstChild().getNodeValue()));
                 } catch (DOMException e) {
                     writeLog("IllegalArgumentException +" + e.getMessage());
@@ -148,14 +151,16 @@ public class AppManager {
         } else {
             try {
                 saveConfig();
-            } catch (IllegalArgumentException | IllegalAccessException | TransformerException ex) {
+            } catch (IllegalArgumentException | IllegalAccessException 
+                    | TransformerException ex) {
                 writeLog(ex.getClass().getSimpleName() + " " + ex.getMessage());
             }
         }
     }
 
-    public static void saveConfig() throws ParserConfigurationException, IllegalArgumentException,
-            IllegalAccessException, TransformerConfigurationException, TransformerException, IOException {
+    public static void saveConfig() throws ParserConfigurationException, 
+            IllegalArgumentException, IllegalAccessException, 
+           TransformerConfigurationException, TransformerException, IOException{
         Document document = builderFactory
                 .newDocumentBuilder()
                 .newDocument();
@@ -166,7 +171,8 @@ public class AppManager {
             field.setAccessible(true);
             if (!field.getType().equals(Setting.class)) {
                 Element e = document.createElement(field.getName());
-                e.appendChild(document.createTextNode(String.valueOf(field.get(setting))));
+                e.appendChild(document.createTextNode(String.valueOf(field
+                        .get(setting))));
                 root.appendChild(e);
             }
         }
