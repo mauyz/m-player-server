@@ -37,17 +37,24 @@ import org.xml.sax.SAXException;
  */
 public class AppManager {
 
-    private static final File confDir = new File(System.getProperty("user.home") + File.separator + ".mplayer"),
-            config = new File(confDir.getAbsolutePath() + File.separator + "mplayer.conf"),
-            playlistDir = new File(confDir.getAbsolutePath() + File.separator + "playlist"),
-            playlistDefault = new File(playlistDir.getAbsolutePath() + File.separator + "Default"),
-            lockFile = new File(confDir.getAbsolutePath() + File.separator + ".lock"),
-            logFile = new File(confDir.getAbsolutePath() + File.separator + "mplayer.log");
+    private static final File confDir = new File(System.getProperty("user.home") 
+            + File.separator + ".mplayer"),
+            config = new File(confDir.getAbsolutePath() + File.separator 
+                   + "mplayer.conf"),
+            playlistDir = new File(confDir.getAbsolutePath() + File.separator 
+                    + "playlist"),
+            playlistDefault = new File(playlistDir.getAbsolutePath() 
+                    + File.separator + "Default"),
+            lockFile = new File(confDir.getAbsolutePath() + File.separator 
+                    + ".lock"),
+            logFile = new File(confDir.getAbsolutePath() + File.separator 
+                    + "mplayer.log");
 
     private static RandomAccessFile randomAccessFile;
     private static FileLock fileLock;
 
-    private static final DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
+    private static final DocumentBuilderFactory 
+            builderFactory = DocumentBuilderFactory.newInstance();
 
     public static void loadConfig() throws ParserConfigurationException,
             SAXException, IOException {
@@ -72,7 +79,8 @@ public class AppManager {
             if (node != null && node.getLength() > 0 && node.item(0)
                     .hasChildNodes()) {
                 try {
-                    setting.setPlaylist(node.item(0).getFirstChild().getNodeValue());
+                    setting.setPlaylist(node.item(0).getFirstChild()
+                            .getNodeValue());
                 } catch (IllegalArgumentException e) {
                     writeLog("IllegalArgumentException +" + e.getMessage());
                 }
